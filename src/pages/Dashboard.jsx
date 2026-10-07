@@ -27,12 +27,12 @@ import "../components/components.css";
 import "./Dashboard.css";
 
 const NAV_ITEMS = [
-  { key: "overview", label: "Overview", icon: <GridIcon /> },
-  { key: "donations", label: "Donations", icon: <HeartIcon /> },
-  { key: "volunteers", label: "Volunteers", icon: <UsersIcon /> },
-  { key: "programs", label: "Programs", icon: <FolderIcon /> },
-  { key: "reports", label: "Reports", icon: <BarChartIcon /> },
-  { key: "calendar", label: "Calendar", icon: <CalendarIcon /> },
+  { key: "overview", label: "Overview", icon: <GridIcon />, href: "/dashboard" },
+  { key: "donations", label: "Donations", icon: <HeartIcon />, href: "/donations" },
+  { key: "volunteers", label: "Volunteers", icon: <UsersIcon />, href: "/volunteers" },
+  { key: "programs", label: "Programs", icon: <FolderIcon />, href: "/programs" },
+  { key: "reports", label: "Reports", icon: <BarChartIcon />, href: "/reports" },
+  { key: "calendar", label: "Calendar", icon: <CalendarIcon />, href: "/calendar" },
 ];
 
 const STATS = [
@@ -211,7 +211,7 @@ export default function Dashboard() {
 
         <nav className="primary-nav" aria-label="Primary">
           {NAV_ITEMS.map((item, i) => (
-            <NavItem key={item.key} icon={item.icon} label={item.label} active={i === 0} />
+            <NavItem key={item.key} icon={item.icon} label={item.label} active={i === 0} href={item.href} />
           ))}
         </nav>
 
@@ -231,8 +231,8 @@ export default function Dashboard() {
         </div>
 
         <nav className="secondary-nav" aria-label="Secondary">
-          <NavItem icon={<SettingsIcon />} label="Settings" />
-          <NavItem icon={<SupportIcon />} label="Support" />
+          <NavItem icon={<SettingsIcon />} label="Settings" href="/settings" />
+          <NavItem icon={<SupportIcon />} label="Support" href="/support" />
         </nav>
       </aside>
 
