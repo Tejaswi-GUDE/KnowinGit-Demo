@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light;
+
+  --bg: #FAF9F5;
+  --surface: #FFFFFF;
+  --ink: #1C1F1B;
+  --sage: #6B7267;
+  --line: #E4E1D6;
+  --line-strong: #D8D4C6;
+  --placeholder: #9A9C90;
+  --grid-line: #EDEAE0;
+
+  --moss: #3F5D4A;
+  --moss-deep: #334C3C;
+  --moss-wash: #EEF1EC;
+  --brick: #B5482E;
+  --brick-wash: #FBEEEA;
+
+  --on-accent: #FFFFFF;
+  --scrim: rgba(28, 31, 27, 0.28);
+
+  --font: "Inter", "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  --u: 8px;
+  --radius: 6px;
+  --panel-bg: #1E2D24;
+  --panel-bg-raised: #28392E;
+  --panel-ink: #F2F1E8;
+  --panel-muted: #9FB0A3;
+  --panel-line: rgba(242, 241, 232, 0.14);
+  --panel-accent: #8FC79E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #16180F;
+    --surface: #1D1F16;
+    --ink: #F0EFE6;
+    --sage: #9BA290;
+    --line: #34362A;
+    --line-strong: #454735;
+    --placeholder: #6B6D5F;
+    --grid-line: #262820;
+    --moss: #6E9179;
+    --moss-deep: #86AB90;
+    --moss-wash: #232A22;
+    --brick: #E38466;
+    --brick-wash: #2E2019;
+    --on-accent: #F3F2E8;
+    --scrim: rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16180F;
+  --surface: #1D1F16;
+  --ink: #F0EFE6;
+  --sage: #9BA290;
+  --line: #34362A;
+  --line-strong: #454735;
+  --placeholder: #6B6D5F;
+  --grid-line: #262820;
+  --moss: #6E9179;
+  --moss-deep: #86AB90;
+  --moss-wash: #232A22;
+  --brick: #E38466;
+  --brick-wash: #2E2019;
+  --on-accent: #F3F2E8;
+  --scrim: rgba(0, 0, 0, 0.5);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+button { font-family: inherit; }
+
+svg.icon { display: block; flex-shrink: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

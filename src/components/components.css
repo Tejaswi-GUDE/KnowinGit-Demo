@@ -1,0 +1,175 @@
+/* Styles for src/components/* — shared between SignIn and Dashboard.
+   Import once, after theme.css. All colors come from theme.css tokens. */
+
+/* ---------- Logo ---------- */
+
+.gw-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--panel-ink);
+}
+
+.gw-logo-mark { flex-shrink: 0; }
+
+/* ---------- Button ---------- */
+
+.gw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-family: inherit;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.gw-btn-full { width: 100%; }
+
+.gw-btn-outline {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.gw-btn-outline:hover { border-color: var(--moss); color: var(--moss); }
+
+.gw-btn-solid {
+  background: var(--moss);
+  border-color: var(--moss);
+  color: var(--on-accent);
+}
+
+.gw-btn-solid:hover { background: var(--moss-deep); border-color: var(--moss-deep); }
+
+.gw-btn:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 2px;
+}
+
+/* ---------- Input / Field ---------- */
+
+.gw-input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 120ms ease;
+}
+
+.gw-input::placeholder { color: var(--placeholder); }
+
+.gw-input:focus { outline: none; border-color: var(--moss); }
+
+.gw-input:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--moss) 35%, transparent);
+  outline-offset: 1px;
+}
+
+.gw-field { display: flex; flex-direction: column; gap: 7px; }
+
+.gw-field-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gw-field-head label { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+/* ---------- StatBlock ---------- */
+
+.gw-stat {
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gw-stat-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.gw-stat-label { font-size: 13px; font-weight: 500; }
+
+.gw-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.gw-stat-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gw-stat-delta.up { color: var(--moss); }
+.gw-stat-delta.down { color: var(--brick); }
+
+/* variant: sits on the fixed deep-moss panel (sign-in mission stats) */
+.gw-stat-panel {
+  border: 1px solid var(--panel-line);
+  background: transparent;
+}
+
+.gw-stat-panel .gw-stat-label { color: var(--panel-muted); }
+.gw-stat-panel .gw-stat-value { color: var(--panel-ink); font-size: clamp(24px, 2.4vw, 30px); }
+
+/* variant: bordered surface card (dashboard stat grid) */
+.gw-stat-card {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 20px;
+}
+
+.gw-stat-card .gw-stat-label { color: var(--sage); }
+.gw-stat-card .gw-stat-value { color: var(--ink); font-size: 30px; }
+
+/* ---------- NavItem ---------- */
+
+.gw-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px 9px 13px;
+  border-left: 2px solid transparent;
+  color: var(--panel-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.gw-nav-link:hover { color: var(--panel-ink); background: var(--panel-bg-raised); }
+
+.gw-nav-link.active {
+  color: var(--panel-accent);
+  border-left-color: var(--panel-accent);
+  background: var(--panel-bg-raised);
+  font-weight: 600;
+}
+
+.gw-nav-link .label { white-space: nowrap; }
